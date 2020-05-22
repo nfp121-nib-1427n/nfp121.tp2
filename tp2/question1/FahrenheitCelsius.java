@@ -1,4 +1,5 @@
 package question1;
+import java.text.DecimalFormat;
 
 /**
  * Décrivez votre classe FahrenheitCelsius ici.
@@ -15,11 +16,16 @@ public class FahrenheitCelsius {
 	 * @param args
 	 *            ...
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] fahrenheit) {
 		// pour tous les paramètres de la ligne de commande
-		int fahrenheit = 0;
-		float celsius = 0;
-		System.out.println(fahrenheit + "\u00B0F -> " + celsius + "\u00B0C"); // ligne,
+		int fahrenheitEntier ;
+		float celsius ;
+		for (String fahren : fahrenheit){
+		    fahrenheitEntier = Integer.parseInt(fahren);
+		    celsius = fahrenheitEnCelsius(fahrenheitEntier);
+		   System.out.println(fahrenheitEntier + "\u00B0F -> " + String.format("%.1f", celsius) + "\u00B0C");
+		}
+		 // ligne,
 																				// format
 																				// imposés
 																				
@@ -33,9 +39,9 @@ public class FahrenheitCelsius {
 	 * @return la conversion en degré Celsius
 	 */
 	public static float fahrenheitEnCelsius(int f) {
-
-		return 0.F; // à compléter en remplaçant ce return 0.F par la fonction
-					// de conversion
+		float celsius = ((float)5/(float)9)*(f - 32);
+                celsius = ((int)(celsius * 10))/10.0f;
+                return (celsius);
 	}
 
 }
